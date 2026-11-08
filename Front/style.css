@@ -1,0 +1,898 @@
+/* ==========================================================================
+   DESIGN SYSTEM - IEM VALINHOS (HARVARD / LUXURY HEALTHCARE INTERACTIVE)
+   ========================================================================== */
+
+:root {
+    --clr-brand-dark: #00251a;
+    --clr-brand-primary: #004d40;
+    --clr-brand-accent: #00897b;
+    --clr-accent: #ffb300;
+    --clr-accent-hover: #ffa000;
+
+    --clr-bg-main: #f8fafc;
+    --clr-bg-subtle: #f1f5f9;
+    --clr-surface: #ffffff;
+    --clr-text-main: #0f172a;
+    --clr-text-muted: #475569;
+    --clr-border: #e2e8f0;
+
+    --ff-heading: 'Poppins', system-ui, sans-serif;
+    --ff-body: 'Inter', system-ui, sans-serif;
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    
+    --shadow-card: 0 4px 20px -2px rgba(0, 77, 64, 0.05);
+    --shadow-hover: 0 14px 30px -4px rgba(0, 137, 123, 0.25);
+    --shadow-accent-hover: 0 10px 25px -3px rgba(255, 179, 0, 0.4);
+    
+    /* Transição Fluida Suave */
+    --transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 15px;
+}
+
+body {
+    background-color: var(--clr-bg-main);
+    color: var(--clr-text-main);
+    font-family: var(--ff-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.container-narrow {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.container-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
+}
+
+.section {
+    padding: 5rem 0;
+}
+
+.bg-subtle {
+    background-color: var(--clr-bg-subtle);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-3 {
+    margin-top: 2rem;
+}
+
+/* ==========================================================================
+   HEADER & INTERAÇÕES DE NAVEGAÇÃO
+   ========================================================================== */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--clr-border);
+}
+
+.header-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0.85rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--ff-heading);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--clr-brand-primary);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    transition: var(--transition);
+}
+
+.logo span {
+    color: var(--clr-brand-accent);
+    font-weight: 400;
+}
+
+.logo:hover {
+    transform: scale(1.04);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--clr-text-muted);
+    font-size: 0.88rem;
+    font-weight: 500;
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+.nav-menu a:hover {
+    color: var(--clr-brand-primary);
+    background: rgba(0, 137, 123, 0.08);
+    transform: translateY(-2px);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn-text {
+    text-decoration: none;
+    color: var(--clr-brand-primary);
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+.btn-text:hover {
+    color: var(--clr-brand-accent);
+    background: rgba(0, 137, 123, 0.08);
+}
+
+.btn-nav {
+    background: var(--clr-brand-accent);
+    color: #fff !important;
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    box-shadow: 0 4px 12px rgba(0, 137, 123, 0.2);
+}
+
+.btn-nav:hover {
+    background: var(--clr-brand-dark);
+    color: var(--clr-accent) !important;
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: var(--shadow-hover);
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero {
+    background: linear-gradient(135deg, var(--clr-brand-dark) 0%, var(--clr-brand-primary) 100%);
+    color: #fff;
+    padding: 5.5rem 1.5rem;
+    text-align: center;
+}
+
+.hero-container {
+    max-width: 740px;
+    margin: 0 auto;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+}
+
+.hero h1 {
+    font-family: var(--ff-heading);
+    font-size: clamp(2rem, 4vw, 2.6rem);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.hero p {
+    font-size: 1.02rem;
+    color: rgba(255, 255, 255, 0.88);
+    margin-bottom: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   SUPER INTERATIVE BUTTON SYSTEM (HOVERS AVANÇADOS)
+   ========================================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 1.75rem;
+    font-size: 0.92rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: var(--transition);
+    border: 2px solid transparent;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary {
+    background: var(--clr-accent);
+    color: #111;
+    box-shadow: 0 4px 15px rgba(255, 179, 0, 0.25);
+}
+
+.btn-primary:hover {
+    background: var(--clr-brand-dark);
+    color: #ffffff;
+    border-color: var(--clr-accent);
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: var(--shadow-accent-hover);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn-secondary:hover {
+    background: #ffffff;
+    color: var(--clr-brand-dark);
+    border-color: #ffffff;
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.25);
+}
+
+.btn-secondary-dark {
+    background: transparent;
+    color: var(--clr-brand-primary);
+    border: 2px solid var(--clr-brand-primary);
+}
+
+.btn-secondary-dark:hover {
+    background: var(--clr-brand-primary);
+    color: #ffffff;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-outline-accent {
+    background: transparent;
+    color: #b78103;
+    border: 2px solid #ffb300;
+}
+
+.btn-outline-accent:hover {
+    background: #ffb300;
+    color: #111;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: var(--shadow-accent-hover);
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.btn-link {
+    color: var(--clr-brand-accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.88rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-top: 0.8rem;
+    transition: var(--transition);
+}
+
+.btn-link:hover {
+    color: var(--clr-brand-dark);
+    transform: translateX(5px);
+}
+
+/* ==========================================================================
+   NOVA SEÇÃO QUEM SOMOS (CSS ESTRUTURADO)
+   ========================================================================== */
+.about-hero-box {
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-lg);
+    padding: clamp(2rem, 5vw, 3.5rem);
+    box-shadow: var(--shadow-card);
+}
+
+.about-main-text {
+    max-width: 800px;
+    margin: 0 auto 2.5rem auto;
+    text-align: center;
+}
+
+.lead-highlight {
+    font-size: 1.1rem;
+    color: var(--clr-text-main);
+    line-height: 1.7;
+    margin-top: 0.8rem;
+}
+
+.about-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.about-feature-card {
+    background: var(--clr-bg-subtle);
+    border: 1fr solid var(--clr-border);
+    border-left: 4px solid var(--clr-brand-accent);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+}
+
+.about-feature-card:hover {
+    background: #ffffff;
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+    border-left-color: var(--clr-accent);
+}
+
+.feature-number {
+    font-family: var(--ff-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--clr-brand-primary);
+    display: block;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+}
+
+.about-feature-card h4 {
+    font-size: 1.05rem;
+    color: var(--clr-brand-dark);
+    margin-bottom: 0.3rem;
+}
+
+.about-feature-card p {
+    font-size: 0.85rem;
+    color: var(--clr-text-muted);
+}
+
+.about-synergy-banner {
+    background: linear-gradient(135deg, #00251a 0%, #004d40 100%);
+    color: #ffffff;
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.synergy-info {
+    max-width: 600px;
+}
+
+.synergy-info h3 {
+    font-size: 1.2rem;
+    color: var(--clr-accent);
+    margin-bottom: 0.4rem;
+}
+
+.synergy-info p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.company-badge-clean {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1rem;
+    border-radius: var(--radius-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.company-badge-clean span {
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.company-badge-clean small {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ==========================================================================
+   SEÇÃO TITULOS & DEMAIS COMPONENTES
+   ========================================================================== */
+.section-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.section-header.align-left {
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.section-tag {
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--clr-brand-accent);
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.section-header h2 {
+    font-family: var(--ff-heading);
+    font-size: 1.8rem;
+    color: var(--clr-brand-primary);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    color: var(--clr-text-muted);
+    font-size: 0.95rem;
+    margin-top: 0.4rem;
+}
+
+/* MISSÃO */
+.mission-statement {
+    background: var(--clr-surface);
+    border-left: 4px solid var(--clr-brand-accent);
+    padding: 2rem;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition);
+}
+
+.mission-statement:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.mission-statement p {
+    font-size: 1.05rem;
+    color: var(--clr-text-main);
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* ESPECIALIDADES CLICÁVEIS (HOVER ANIMADO) */
+.grid-specialties {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+    gap: 0.75rem;
+}
+
+.spec-item {
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    padding: 0.75rem 0.9rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.83rem;
+    font-weight: 500;
+    color: var(--clr-text-main);
+    text-align: center;
+    transition: var(--transition);
+    cursor: pointer;
+    user-select: none;
+}
+
+.spec-item:hover {
+    border-color: var(--clr-brand-accent);
+    color: #ffffff;
+    background: var(--clr-brand-accent);
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 8px 18px rgba(0, 137, 123, 0.25);
+}
+
+/* CARDS DE EXAMES (HOVER ANIMADO) */
+.grid-exams {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+}
+
+.exam-card {
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    padding: 1.75rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+}
+
+.exam-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--clr-brand-accent);
+}
+
+.exam-icon {
+    color: var(--clr-brand-accent);
+    margin-bottom: 0.8rem;
+    transition: var(--transition);
+}
+
+.exam-card:hover .exam-icon {
+    transform: scale(1.15);
+    color: var(--clr-accent);
+}
+
+.exam-card h3 {
+    font-size: 1.05rem;
+    color: var(--clr-brand-primary);
+    margin-bottom: 0.4rem;
+}
+
+.exam-card p {
+    font-size: 0.85rem;
+    color: var(--clr-text-muted);
+    flex-grow: 1;
+}
+
+/* TOUR VIRTUAL & LOCAÇÃO */
+.eco-box {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    padding: 1.25rem;
+    border-radius: var(--radius-md);
+    margin-top: 1.5rem;
+}
+
+.eco-box h4 {
+    color: #166534;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.eco-box ul {
+    list-style: none;
+    margin-top: 0.4rem;
+}
+
+.eco-box li {
+    font-size: 0.82rem;
+    color: #14532d;
+    position: relative;
+    padding-left: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.eco-box li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #22c55e;
+    font-weight: bold;
+}
+
+.tour-card {
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.tour-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.tour-card h3 {
+    color: var(--clr-brand-primary);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.tour-card p {
+    font-size: 0.88rem;
+    color: var(--clr-text-muted);
+}
+
+.tour-preview-box {
+    background: var(--clr-bg-subtle);
+    border: 2px dashed var(--clr-border);
+    padding: 2.5rem 1rem;
+    border-radius: var(--radius-md);
+    margin-top: 1.25rem;
+    font-weight: 600;
+    color: var(--clr-brand-primary);
+}
+
+/* AGENDAMENTO */
+.booking-wrapper {
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    padding: 2.25rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+}
+
+.booking-form .form-group {
+    margin-bottom: 1.2rem;
+}
+
+.booking-form label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--clr-text-main);
+    margin-bottom: 0.35rem;
+}
+
+.booking-form input,
+.booking-form select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-sm);
+    font-family: var(--ff-body);
+    font-size: 0.9rem;
+    color: var(--clr-text-main);
+    background: var(--clr-bg-main);
+    transition: var(--transition);
+}
+
+.booking-form input:focus,
+.booking-form select:focus {
+    outline: none;
+    border-color: var(--clr-brand-accent);
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(0, 137, 123, 0.15);
+}
+
+/* CONTATO */
+.contact-section {
+    background: var(--clr-surface);
+    border-top: 1px solid var(--clr-border);
+}
+
+.contact-info {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-info h3 {
+    color: var(--clr-brand-primary);
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+}
+
+.contact-info p {
+    font-size: 0.95rem;
+    color: var(--clr-text-muted);
+    margin-bottom: 0.6rem;
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* FOOTER */
+.site-footer {
+    background: var(--clr-brand-dark);
+    color: rgba(255, 255, 255, 0.65);
+    padding: 2.5rem 0;
+    font-size: 0.8rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    text-align: center;
+}
+
+.footer-legal {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .container-grid-2 {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .about-synergy-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .grid-specialties {
+        grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
+    }
+}
+
+
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS DO CORPO CLÍNICO & DOCTORS GRID
+   ========================================================================== */
+
+.doctors-page-section {
+    min-height: 75vh;
+}
+
+.doctors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.75rem;
+    margin-top: 2rem;
+}
+
+.doctor-card {
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    padding: 2rem 1.5rem;
+    border-radius: var(--radius-md);
+    text-align: center;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito Hover interativo e animado nos cards de médicos */
+.doctor-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--clr-brand-accent);
+    background: #ffffff;
+}
+
+.doctor-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.25rem;
+    border: 3px solid var(--clr-bg-subtle);
+    transition: var(--transition);
+}
+
+.doctor-card:hover img {
+    border-color: var(--clr-brand-accent);
+    transform: scale(1.05);
+}
+
+.doctor-card h3 {
+    font-family: var(--ff-heading);
+    font-size: 1.1rem;
+    color: var(--clr-brand-primary);
+    margin-bottom: 0.4rem;
+    transition: var(--transition);
+}
+
+.doctor-card:hover h3 {
+    color: var(--clr-brand-dark);
+}
+
+.spec-tag {
+    display: inline-block;
+    background: rgba(0, 137, 123, 0.1);
+    color: var(--clr-brand-accent);
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    transition: var(--transition);
+}
+
+.doctor-card:hover .spec-tag {
+    background: var(--clr-brand-accent);
+    color: #ffffff;
+}
+
+.convenio {
+    font-size: 0.82rem;
+    color: var(--clr-text-muted);
+    line-height: 1.4;
+}
+
+.doctor-loading-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem;
+    color: var(--clr-text-muted);
+    font-style: italic;
+}
+
+.error-msg {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #dc2626;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    padding: 1.5rem;
+    border-radius: var(--radius-sm);
+}
+
+/* Link de voltar estilizado no header */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--clr-text-muted);
+    font-weight: 500;
+    font-size: 0.88rem;
+    transition: var(--transition);
+}
+
+.back-link:hover {
+    color: var(--clr-brand-accent);
+    transform: translateX(-3px);
+}

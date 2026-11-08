@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corpo Clínico — IEM Valinhos</title>
+    <!-- Fontes Google (Inter + Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CABEÇALHO SIMPLIFICADO PREMIUM -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">IEM <span>Valinhos</span></a>
+            <nav class="nav-menu">
+                <a href="index.html" class="back-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    Voltar para a Página Principal
+                </a>
+            </nav>
+            <div class="header-actions">
+                <a href="index.html#agendamento" class="btn-nav">Agendar Consulta</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SEÇÃO DO CORPO CLÍNICO -->
+    <section class="section doctors-page-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Excelência Multidisciplinar</span>
+                <h2>Nosso Corpo Clínico</h2>
+                <p class="subtitle">Conheça os profissionais altamente qualificados que atendem em nossa estrutura.</p>
+            </div>
+            
+            <!-- Grid onde o script.js injeta os cards via JSON -->
+            <div id="doctors-grid" class="doctors-grid">
+                <!-- Estado de carregamento inicial elegante -->
+                <div class="doctor-loading-state">
+                    <p>Carregando corpo clínico...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ INSTITUCIONAL -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 IEM — Instituto de Especialidades Médicas. Valinhos - SP.</p>
+            <p class="footer-legal">Centro Imagem Locação de Salas e Especialidades Médicas Ltda | CNPJ: 26.570.616/0001-91</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT DE CARREGAMENTO DO JSON -->
+    <script src="script.js" defer></script>
+</body>
+</html>
